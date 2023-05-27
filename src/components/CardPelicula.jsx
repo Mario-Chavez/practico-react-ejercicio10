@@ -19,8 +19,8 @@ const CardPelicula = ({listaDePeli,handleBorrar}) => {
                         </div>
                         <hr />
                         <div className="my-4">
-                          <Card.Text className='my-2'>Genero : <span className="border border-primary border-1 p-1"> {peli.generoPeli} </span></Card.Text>
-                          <Card.Text className='my-2'>Descripcion : <span className="border border-primary border-1 p-1"> {peli.descripcion} </span></Card.Text>
+                          <Card.Text className='my-3'>Genero : <span className="p-1"> {peli.generoPeli} </span></Card.Text>
+                          <Card.Text className='my-3'>Descripcion : <span className="p-1"> {peli.descripcion} </span></Card.Text>
                         </div>
                         
                     </Card.Body>

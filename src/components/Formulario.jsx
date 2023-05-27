@@ -4,6 +4,7 @@ import CardPelicula from './CardPelicula';
 
 const Formulario = () => {
    const [nombrePeli, setNombrePeli] = useState("");
+   const [imagen, setImagen] = useState("")
    const [generoPeli, setGeneroPeli] = useState("");
    const [descripcion, setDescripcion] = useState("")
    
@@ -17,16 +18,31 @@ const Formulario = () => {
 
    const handleSubmit =(e)=>{
         e.preventDefault()
-        setListaPeliculas([
-            ...listaPeliculas,
-            {
-                nombrePeli,generoPeli,descripcion 
-             }
-        ])
-        setGeneroPeli("")
-        setNombrePeli("")
-        setDescripcion("")
+
+        
+        if (!validateURLImage(imagen)) {
+            console.log("entre a q es false");
+            alert("URL invalida")
+          } else {
+            setListaPeliculas([
+                ...listaPeliculas,
+                {
+                    nombrePeli,imagen,generoPeli,descripcion 
+                 }
+            ])
+            setNombrePeli("")
+            setImagen("")
+            setGeneroPeli("")
+            setDescripcion("")
+          }
+        
       
+    }
+
+    const  validateURLImage= (value)=>{
+        let patron = /^(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp)$/;
+        return patron.test(value);
+        
     }
 
     const handleBorrar = (nombrePeli)=>{
@@ -54,13 +70,22 @@ const Formulario = () => {
                         required
                         />
                     </Form.Group>
+                    <Form.Group  className="d-flex m-2" controlId="imagenPelicula">
+                    <Form.Label className='me-3'>Imagen Pelicula:</Form.Label>
+                        <Form.Control type="text"
+                        placeholder="Pega la URL de tu peli aqui"
+                        onChange={(e)=>setImagen(e.target.value)}
+                        value={imagen}
+                        required
+                        />
+                    </Form.Group>
                     <Form.Group className="d-flex m-2" controlId="genero" >
                         <Form.Label className='me-4'>Genero Pelicula:</Form.Label>
                         <Form.Select  onChange={(e)=>setGeneroPeli(e.target.value)}>
                             <option>Sellecione un genero </option>
                             <option value="accion">Accion</option>
                             <option value="drama">Drama</option>
-                            <option value="cienciaFiccion">Ciencia Ficcion</option>
+                            <option value="ciencia Ficcion">Ciencia Ficcion</option>
                             <option value="comedia">Comedia</option>
                             <option value="romantica">Romantica</option>
                         </Form.Select>
