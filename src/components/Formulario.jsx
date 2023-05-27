@@ -55,7 +55,7 @@ const Formulario = () => {
     return (
         <> 
             <section>
-                <Form  className=' mx-auto formulario p-2 border'onSubmit={handleSubmit} >
+                <Form  className=' mx-auto formulario p-2 border formBackground'onSubmit={handleSubmit} >
                     <div>
                         <h2 className='text-center mb-4'>Peliculas</h2>
                         <p className='text-success fs-4' >Llenar el formulario para crear una Pelicula</p>
@@ -81,13 +81,13 @@ const Formulario = () => {
                     </Form.Group>
                     <Form.Group className="d-flex m-2" controlId="genero" >
                         <Form.Label className='me-4'>Genero Pelicula:</Form.Label>
-                        <Form.Select  onChange={(e)=>setGeneroPeli(e.target.value)}>
+                        <Form.Select required  onChange={(e)=>setGeneroPeli(e.target.value)}>
                             <option>Sellecione un genero </option>
-                            <option value="accion">Accion</option>
-                            <option value="drama">Drama</option>
-                            <option value="ciencia Ficcion">Ciencia Ficcion</option>
-                            <option value="comedia">Comedia</option>
-                            <option value="romantica">Romantica</option>
+                            <option value="Accion">Accion</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Ciencia Ficcion">Ciencia Ficcion</option>
+                            <option value="Comedia">Comedia</option>
+                            <option value="Romantica">Romantica</option>
                         </Form.Select>
                     </Form.Group>
                     
@@ -99,6 +99,7 @@ const Formulario = () => {
                         onChange={(e)=>setDescripcion(e.target.value)}
                         value={descripcion}
                         required
+                        maxLength={200}
                         className='ms-2'
                         />
                     </Form.Group>

@@ -16,3 +16,7 @@
    
   }
   
+ .formBackground{
+  background: rgb(195,226,28);
+background: radial-gradient(circle, rgba(195,226,28,0.8827906162464986) 0%, rgba(217,244,210,1) 100%);
+ }

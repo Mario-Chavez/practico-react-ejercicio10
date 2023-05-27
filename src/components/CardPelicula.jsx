@@ -12,14 +12,17 @@ const CardPelicula = ({listaDePeli,handleBorrar}) => {
                     <Card key={index} className="my-3 cards col-lg-3 col-md-4 m-1 " >
                     <Card.Body >
                         <div className='d-flex'>
-                            <Card.Title className=" ms-4"> 
-                            Pelicula: {peli.nombrePeli}
+                            <Card.Title className=" mx-auto"> 
+                            {peli.nombrePeli}
                             </Card.Title>
                             
                         </div>
                         <hr />
                         <div className="my-4">
-                          <Card.Text className='my-3'>Genero : <span className="p-1"> {peli.generoPeli} </span></Card.Text>
+                        <Card.Img  src={peli.imagen} className="mx-auto d-block" /> 
+                          <Card.Text className='my-3'>Genero : <span className="p-1"> {
+                          (peli.generoPeli == "")? "----" : peli.generoPeli
+                          } </span></Card.Text>
                           <Card.Text className='my-3'>Descripcion : <span className="p-1"> {peli.descripcion} </span></Card.Text>
                         </div>
                         
