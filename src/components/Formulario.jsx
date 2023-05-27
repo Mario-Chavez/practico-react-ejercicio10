@@ -110,7 +110,7 @@ const Formulario = () => {
                     </Form.Group>
                 </Form>
             </section>
-            <section className="row justify-content-between mt-5">
+            <section className="row justify-content-evenly mt-5">
                      {
                         listaPeliculas.length > 0 
                         ? <CardPelicula listaDePeli ={listaPeliculas} handleBorrar ={handleBorrar} />

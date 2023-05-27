@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-// import Avatar from 'react-avatar';
 
 const CardPelicula = ({listaDePeli,handleBorrar}) => {
-    console.log(listaDePeli);
+    
     
     return (
         <>
